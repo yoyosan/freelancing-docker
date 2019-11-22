@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+  # PHP-FPM
+  php-fpm:
+    build:
+      context: ./
+      dockerfile: ./php-fpm.dockerfile
+    expose:
+      - "9000"
+    volumes:
+      - ../freelancing/:/var/www
+
+  # Web Server
+  apache:
+    build:
+      context: ./
+      dockerfile: ./apache.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ../freelancing/:/var/www
+      - ./apache/logs:/var/log/apache2
+      - ./apache/sites:/etc/apache2/sites-available
+    ports:
+      - "80:80"
+    depends_on:
+      - php-fpm
+
+  # Maria DB
+  mariadb:
+    build:
+      context: ./
+      dockerfile: ./mariadb.dockerfile
+    environment:
+      - MYSQL_USER=default
+      - MYSQL_PASSWORD=secret
+      - MYSQL_DATABASE=default
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - TZ=${TIMEZONE}
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  mariadb_data:

@@ -1,0 +1,5 @@
+# Credentials
+MYSQL_ROOT_PASSWORD=freelancing-safer1234
+
+# The timezone used in Mysql
+TIMEZONE=Europe/Bucharest

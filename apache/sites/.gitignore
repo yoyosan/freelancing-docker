@@ -1,0 +1,4 @@
+*.conf
+!default.conf
+!default.apache.conf
+logs/
