@@ -60,6 +60,10 @@ RUN set -xe; \
 
 RUN docker-php-ext-install mysqli
 
+RUN apt-get install -y libc-client-dev libkrb5-dev && \
+    docker-php-ext-configure imap --with-kerberos --with-imap-ssl && \
+    docker-php-ext-install imap
+
 COPY ./php-fpm/php.ini /usr/local/etc/php/php.ini
 COPY ./php-fpm/laravel.ini /usr/local/etc/php/conf.d
 COPY ./php-fpm/xlaravel.pool.conf /usr/local/etc/php-fpm.d/
