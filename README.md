@@ -2,8 +2,8 @@
 
 ## About
 
-Based on Laradock, you can use this folder to start only what you need
-for your freelancing services.
+Based on [Laradock](https://github.com/laradock/laradock) but without all the BS services, 
+you can use this folder to start only what you need for your freelancing services.
 
 What's included?
 * Apache 2.4
@@ -20,6 +20,8 @@ cp env-example .env
 
 ## Usage
 
+First, make sure your projects are in a `../freelancing` folder.
+
 Start it up:
 
 ```bash
@@ -31,3 +33,7 @@ Rebuild everything to update service versions:
 ```
 docker-compose down && docker-compose build && docker-compose up -d
 ```
+
+Add new sites:
+
+Just add a new file based on `apache/sites/sample.conf.example` in the `apache/sites/` folder.
