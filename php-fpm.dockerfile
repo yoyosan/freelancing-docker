@@ -33,7 +33,8 @@ RUN docker-php-ext-install pdo_mysql \
   && docker-php-ext-configure gd \
     --with-jpeg-dir=/usr/lib \
     --with-freetype-dir=/usr/include/freetype2 && \
-    docker-php-ext-install gd
+    docker-php-ext-install gd && \
+    docker-php-ext-install mysqli
 
 # always run apt update when start and after add new source list, then clean up at end.
 RUN set -xe; \
