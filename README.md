@@ -2,7 +2,7 @@
 
 ## About
 
-Based on [Laradock](https://github.com/laradock/laradock) but without all the BS services, 
+Based on [Laradock](https://github.com/laradock/laradock) but without all the BS services,
 you can use this folder to start only what you need for your freelancing services.
 
 What's included?
@@ -37,3 +37,9 @@ docker-compose down && docker-compose build && docker-compose up -d
 Add new sites:
 
 Just add a new file based on `apache/sites/sample.conf.example` in the `apache/sites/` folder.
+
+and then do a:
+
+```
+docker-compose restart
+```
