@@ -42,5 +42,21 @@ services:
     ports:
       - "3306:3306"
 
+  mysql56:
+    build:
+      context: ./
+      dockerfile: ./mysql56.dockerfile
+    environment:
+      - MYSQL_USER=default
+      - MYSQL_PASSWORD=secret
+      - MYSQL_DATABASE=default
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - TZ=${TIMEZONE}
+    volumes:
+      - mysql56db_data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+
 volumes:
   mariadb_data:
+  mysql56db_data:
