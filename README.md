@@ -31,7 +31,7 @@ docker-compose up -d
 Rebuild everything to update service versions:
 
 ```
-docker-compose down && docker-compose build && docker-compose up -d
+docker-compose down && docker-compose build --pull --force-rm && docker-compose up -d
 ```
 
 Add new sites:
