@@ -67,6 +67,7 @@ RUN apt-get install -y libc-client-dev libkrb5-dev && \
 
 COPY ./php-fpm/php.ini /usr/local/etc/php/php.ini
 COPY ./php-fpm/laravel.ini /usr/local/etc/php/conf.d
+COPY ./php-fpm/env.conf /usr/local/etc/php-fpm.d/
 COPY ./php-fpm/xlaravel.pool.conf /usr/local/etc/php-fpm.d/
 
 USER root
