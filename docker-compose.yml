@@ -44,5 +44,13 @@ services:
     ports:
       - "3306:3306"
 
+  # Mailhog
+  mailhog:
+    build:
+      context: ./mailhog/
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
 volumes:
   mariadb_data:
