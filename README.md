@@ -57,7 +57,7 @@ docker-compose down && docker-compose build --pull --force-rm && docker-compose 
 
 Add new sites:
 
-Just add a new file based on `apache/sites/sample.conf.example` in the `apache/sites/` folder.
+Just add a new file based on `nginx/sites/sample.conf.example` in the `nginx/sites/` folder.
 
 and then do a:
 
