@@ -4,8 +4,7 @@ services:
   # PHP-FPM
   php-fpm:
     build:
-      context: ./
-      dockerfile: ./php-fpm.dockerfile
+      context: ./php-fpm
     expose:
       - "9000"
     volumes:
