@@ -14,17 +14,17 @@ services:
       - "smart.local:172.19.0.4"
 
   # Web Server
-  apache:
+  web:
     build:
-      context: ./
-      dockerfile: ./apache.dockerfile
+      context: ./nginx
     working_dir: /var/www
     volumes:
       - ../freelancing/:/var/www
-      - ./apache/logs:/var/log/apache2
-      - ./apache/sites:/etc/apache2/sites-available
+      - ./nginx/logs:/var/log/nginx
+      - ./nginx/sites:/etc/nginx/sites-available
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - php-fpm
 
