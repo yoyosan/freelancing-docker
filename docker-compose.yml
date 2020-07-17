@@ -30,8 +30,7 @@ services:
   # Maria DB
   mariadb:
     build:
-      context: ./
-      dockerfile: ./mariadb.dockerfile
+      context: ./mariadb
     environment:
       - MYSQL_USER=default
       - MYSQL_PASSWORD=secret
